@@ -1,0 +1,29 @@
+import { CommandInteraction } from "discord.js";
+import Command from "../../Helpers/Layout/CMDs.js";
+import DiscordClient from "../../Client.js";
+import { RandomTrading } from "../../../SMOQ/RandomTrading.js";
+import { Functions } from "../../../Functions.js";
+
+export default class RunRT extends Command {
+    constructor() {
+        super(
+            "random-trading", 
+            "[DEV]: Magical Command", 
+            []
+        );
+    }
+
+    async run(c: DiscordClient, int: CommandInteraction) {
+        try {
+            const funcs = new Functions(), rt = new RandomTrading("Normal"), startRes = await rt.startQueue();
+
+            await rt.getToken();
+            await int.reply(funcs.createEmbed("Random Trading", "Starting SMOQ26 RT bot.."));
+            await int.followUp(funcs.createEmbed("Queue Started", `\`\`\`json\n${JSON.stringify(startRes, null, 2)}\n\`\`\``, true));
+        } 
+        catch (e) {
+            console.error(e);
+            await int.followUp(new Functions().sendErr(e instanceof Error ? e.message : String(e)));
+        }
+    }
+}

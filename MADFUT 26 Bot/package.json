@@ -1,0 +1,29 @@
+{
+  "name": "madfut26-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Compiler",
+  "scripts": {
+    "start-no-tsc": "npx swc src -d dist && node Compiler",
+    "start": "npx tsc && node Compiler",
+    "compile": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "console-log-colors": "^0.5.0",
+    "discord.js": "^14.23.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "realm": "^20.2.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^14.1.9",
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^12.4.1",
+    "typescript": "^7.0.2"
+  }
+}

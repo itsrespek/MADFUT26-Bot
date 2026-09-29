@@ -1,0 +1,28 @@
+{
+    "extends": "@tsconfig/node14/tsconfig.json",
+    "include": [
+        "TypeScript/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "compilerOptions": {    
+        "incremental": false,
+        "rootDir": "./TypeScript",
+        "outDir": "./JavaScript",
+        "target": "ES2021",
+        "module": "node16",
+        "noUnusedLocals": true,
+        "moduleResolution": "node16",
+        "experimentalDecorators": true,
+        "pretty": true,
+        "removeComments": false,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "types"
+        ]
+    }
+}

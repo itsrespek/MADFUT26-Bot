@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output (compiled from TypeScript/, contains secrets)
+JavaScript/
+
+# Secrets / local config
+config.txt
+.env
+.env.*
+data/appcheck.json
+
+# Database
+database.sqlite
+database.sqlite-shm
+database.sqlite-wal
+
+# Data files
+data/
+
+# Archives / backups
+TypeScript.zip
+
+# Logs / OS junk
+*.log
+Thumbs.db
+Desktop.ini
